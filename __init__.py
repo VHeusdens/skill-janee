@@ -20,13 +20,15 @@ class TestSkill(MycroftSkill):
     # def __init__(self):
     #     super(TemplateSkill, self).__init__(name="TemplateSkill")
 
+    @intent_handler(IntentBuilder("NeeIntent").require("NeeKeyword"))
+    def handle_nee_intent(self):
+        self.speak_dialog("NeeDialog")
+        
     @intent_handler(IntentBuilder("JaIntent").require("JaKeyword"))
     def handle_ja_intent(self):
         self.speak_dialog("JaDialog")
 
-    @intent_handler(IntentBuilder("NeeIntent").require("NeeKeyword"))
-    def handle_nee_intent(self):
-        self.speak_dialog("NeeDialog")
+
 
     # def stop(self):
     #    return False
