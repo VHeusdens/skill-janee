@@ -24,9 +24,9 @@ class TestSkill(MycroftSkill):
     def handle_nee_intent(self):
         self.speak_dialog("NeeDialog")
 
-    # @intent_handler(IntentBuilder("JaIntent").require("JaKeyword"))
-    # def handle_ja_intent(self):
-    #     self.speak_dialog("JaDialog")
+    @intent_handler(IntentBuilder("JaIntent").require("JaKeyword"))
+    def handle_ja_intent(self):
+        self.speak_dialog("JaDialog")
 
 
 
